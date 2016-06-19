@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     CheckBox box1, box2, box3, box4, box5, box6, box7, box8, box9, box10;
     Button btn;
     String showText;
+    String caluRes;
     MainActivity a;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +98,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                     Thread.sleep(300);
+                    if (showText.equals("正在进行云计算排序")) {
+                        showResult(caluRes);
+                    }
                     a.btn.setEnabled(true);
                     a.btn.setClickable(true);
                 } catch (InterruptedException e) {
@@ -107,8 +111,8 @@ public class MainActivity extends AppCompatActivity {
         }.start();
     }
 
-    private void showResult(String res) {
-        String geneStr = res.substring(res.indexOf("result:") + res.indexOf("_"));
+    public void showResult(String res) {
+        String geneStr = res.substring(res.indexOf("result:") + 7, res.indexOf("_"));
         if (geneStr != null && !geneStr.equals("")) {
             StringBuffer msg = new StringBuffer("拜访顺序：\n");
             char[] geneArray = geneStr.toCharArray();

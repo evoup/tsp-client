@@ -37,6 +37,7 @@ public class CacuTask extends AsyncTask<Object[], String, Void> {
             String resStr = dis.readLine();
             if (resStr != null && !resStr.startsWith("ERR")) {
                 //Toast.makeText(this,"正在进行云计算排序",Toast.LENGTH_LONG).show();
+                a.caluRes = resStr;
                 publishProgress("正在进行云计算排序");
             } else {
                 //Toast.makeText(this,"服务端发生错误", Toast.LENGTH_LONG).show();
