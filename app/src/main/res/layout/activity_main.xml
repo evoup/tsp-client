@@ -12,5 +12,97 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="请选择6个要拜访的地点开始规划"
+        android:id="@+id/textView" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="黄山凤凰源"
+        android:id="@+id/checkBox"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="丫山花海石林"
+        android:id="@+id/checkBox2"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="阅江楼"
+        android:id="@+id/checkBox3"
+        android:layout_below="@+id/checkBox2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="水绘园"
+        android:id="@+id/checkBox4"
+        android:layout_below="@+id/checkBox3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="千灯古镇"
+        android:id="@+id/checkBox5"
+        android:layout_below="@+id/checkBox4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="扬州个园"
+        android:id="@+id/checkBox6"
+        android:layout_below="@+id/checkBox5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="盐城大纵湖"
+        android:id="@+id/checkBox7"
+        android:layout_below="@+id/checkBox6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="西塘古镇"
+        android:id="@+id/checkBox8"
+        android:layout_below="@+id/checkBox7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="浙北大峡谷"
+        android:id="@+id/checkBox9"
+        android:layout_below="@+id/checkBox8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="淮安府署"
+        android:id="@+id/checkBox10"
+        android:layout_below="@+id/checkBox9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
