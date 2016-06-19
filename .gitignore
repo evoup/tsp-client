@@ -33,4 +33,6 @@ proguard/
 captures/
 
 # Intellij
+.idea/
 *.iml 
+tsp-client.iml
