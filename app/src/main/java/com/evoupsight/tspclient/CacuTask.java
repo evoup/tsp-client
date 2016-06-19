@@ -11,10 +11,10 @@ import java.net.Socket;
  * Created by evoup on 16-6-19.
  */
 public class CacuTask extends AsyncTask<Void, String, Void> {
-    private String mChromoStr;
+    private String mChromosomeStr;
 
     public CacuTask(String str) {
-        this.mChromoStr = str;
+        this.mChromosomeStr = str;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class CacuTask extends AsyncTask<Void, String, Void> {
             so.setSoTimeout(1000 * 60 * 5);
             DataOutputStream dos = new DataOutputStream(so.getOutputStream());
             DataInputStream dis = new DataInputStream(so.getInputStream());
-            dos.writeBytes(this.mChromoStr + "\n");
+            dos.writeBytes(this.mChromosomeStr + "\n");
             String resStr = dis.readLine();
             if (resStr != null && !resStr.startsWith("ERR")) {
                 //Toast.makeText(this,"正在进行云计算排序",Toast.LENGTH_LONG).show();
