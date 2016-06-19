@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">TSPClient</string>
+    <string name="intro">请选择6个要拜访的地点开始规划</string>
+    <string name="districtA">黄山凤凰源</string>
+    <string name="districtB">丫山花海石林</string>
+    <string name="districtC">阅江楼</string>
+    <string name="districtD">水绘园</string>
+    <string name="districtE">千灯古镇</string>
+    <string name="districtF">扬州个园</string>
+    <string name="districtG">盐城大纵湖</string>
+    <string name="districtH">西塘古镇</string>
+    <string name="districtI">浙北大峡谷</string>
+    <string name="districtJ">淮安府署</string>
+    <string name="btn01">开始规划行程</string>
 </resources>

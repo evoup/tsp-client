@@ -1,5 +1,6 @@
 package com.evoupsight.tspclient;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -68,12 +69,14 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         btn.setEnabled(false);
+        btn.setClickable(false);
         // 起一个异步任务来做计算
         Object[] objs = new Object[2];
         objs[0] = this;
         objs[1] = chromosomeStr;
         new CacuTask().execute(objs);
         btn.setEnabled(true);
+        btn.setClickable(true);
     }
 
     public void setA(MainActivity a) {
@@ -94,11 +97,52 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                     Thread.sleep(300);
+                    a.btn.setEnabled(true);
+                    a.btn.setClickable(true);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 
             }
         }.start();
+    }
+
+    private void showResult(String res) {
+        String geneStr = res.substring(res.indexOf("result:") + res.indexOf("_"));
+        if (geneStr != null && !geneStr.equals("")) {
+            StringBuffer msg = new StringBuffer("拜访顺序：\n");
+            char[] geneArray = geneStr.toCharArray();
+            for (int i = 0; i < geneArray.length; i++) {
+                if ("A".equals("" + geneArray[i]))
+                    msg.append(getResources().getString(R.string.districtA) + "\n");
+                if ("B".equals("" + geneArray[i]))
+                    msg.append(getResources().getString(R.string.districtB) + "\n");
+                if ("C".equals("" + geneArray[i]))
+                    msg.append(getResources().getString(R.string.districtC) + "\n");
+                if ("D".equals("" + geneArray[i]))
+                    msg.append(getResources().getString(R.string.districtD) + "\n");
+                if ("E".equals("" + geneArray[i]))
+                    msg.append(getResources().getString(R.string.districtE) + "\n");
+                if ("F".equals("" + geneArray[i]))
+                    msg.append(getResources().getString(R.string.districtF) + "\n");
+                if ("G".equals("" + geneArray[i]))
+                    msg.append(getResources().getString(R.string.districtG) + "\n");
+                if ("H".equals("" + geneArray[i]))
+                    msg.append(getResources().getString(R.string.districtH) + "\n");
+                if ("I".equals("" + geneArray[i]))
+                    msg.append(getResources().getString(R.string.districtI) + "\n");
+                if ("J".equals("" + geneArray[i]))
+                    msg.append(getResources().getString(R.string.districtJ) + "\n");
+            }
+            Intent intent = new Intent();
+            intent.setClass(this, ResultActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("result", msg.toString());
+            intent.putExtras(bundle);
+            MainActivity.this.startActivity(intent);
+            MainActivity.this.finish();
+        } else {
+            Toast.makeText(this, "排序数据错误", Toast.LENGTH_LONG).show();
+        }
     }
 }

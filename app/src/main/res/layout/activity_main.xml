@@ -12,13 +12,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="请选择6个要拜访的地点开始规划"
+        android:text="@string/intro"
         android:id="@+id/textView" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="黄山凤凰源"
+        android:text="@string/districtA"
         android:id="@+id/checkBox"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
@@ -28,7 +28,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="丫山花海石林"
+        android:text="@string/districtB"
         android:id="@+id/checkBox2"
         android:layout_below="@+id/checkBox"
         android:layout_alignParentLeft="true"
@@ -37,7 +37,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="阅江楼"
+        android:text="@string/districtC"
         android:id="@+id/checkBox3"
         android:layout_below="@+id/checkBox2"
         android:layout_alignParentLeft="true"
@@ -46,7 +46,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="水绘园"
+        android:text="@string/districtD"
         android:id="@+id/checkBox4"
         android:layout_below="@+id/checkBox3"
         android:layout_alignParentLeft="true"
@@ -55,7 +55,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="千灯古镇"
+        android:text="@string/districtE"
         android:id="@+id/checkBox5"
         android:layout_below="@+id/checkBox4"
         android:layout_alignParentLeft="true"
@@ -64,7 +64,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="扬州个园"
+        android:text="@string/districtF"
         android:id="@+id/checkBox6"
         android:layout_below="@+id/checkBox5"
         android:layout_alignParentLeft="true"
@@ -73,7 +73,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="盐城大纵湖"
+        android:text="@string/districtG"
         android:id="@+id/checkBox7"
         android:layout_below="@+id/checkBox6"
         android:layout_alignParentLeft="true"
@@ -82,7 +82,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="西塘古镇"
+        android:text="@string/districtH"
         android:id="@+id/checkBox8"
         android:layout_below="@+id/checkBox7"
         android:layout_alignParentLeft="true"
@@ -91,7 +91,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="浙北大峡谷"
+        android:text="@string/districtI"
         android:id="@+id/checkBox9"
         android:layout_below="@+id/checkBox8"
         android:layout_alignParentLeft="true"
@@ -100,7 +100,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="淮安府署"
+        android:text="@string/districtJ"
         android:id="@+id/checkBox10"
         android:layout_below="@+id/checkBox9"
         android:layout_alignParentLeft="true"
@@ -109,7 +109,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="开始规划行程"
+        android:text="@string/btn01"
         android:id="@+id/button"
         android:layout_below="@+id/checkBox10"
         android:layout_alignParentLeft="true"
