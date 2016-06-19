@@ -10,17 +10,18 @@ import java.net.Socket;
 /**
  * Created by evoup on 16-6-19.
  */
-public class CacuTask extends AsyncTask<Void, String, Void> {
+public class CacuTask extends AsyncTask<String, String, Void> {
     private String mChromosomeStr;
 
-    public CacuTask(String str) {
+/*    public CacuTask(String str) {
         this.mChromosomeStr = str;
-    }
+    }*/
 
     @Override
     protected void onProgressUpdate(String... values) {
         super.onProgressUpdate(values);
     }
+
 
     @Override
     protected void onPostExecute(Void aVoid) {
@@ -28,14 +29,14 @@ public class CacuTask extends AsyncTask<Void, String, Void> {
     }
 
     @Override
-    protected Void doInBackground(Void... voids) {
+    protected Void doInBackground(String... strings) {
         Socket so = null;
         try {
             so = new Socket("567393.eicp.net", 15866);
             so.setSoTimeout(1000 * 60 * 5);
             DataOutputStream dos = new DataOutputStream(so.getOutputStream());
             DataInputStream dis = new DataInputStream(so.getInputStream());
-            dos.writeBytes(this.mChromosomeStr + "\n");
+            dos.writeBytes(strings[0] + "\n");
             String resStr = dis.readLine();
             if (resStr != null && !resStr.startsWith("ERR")) {
                 //Toast.makeText(this,"正在进行云计算排序",Toast.LENGTH_LONG).show();

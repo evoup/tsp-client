@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         }
         btn.setEnabled(false);
         // 起一个异步任务来做计算
-        new CacuTask(chromosomeStr).execute();
+        new CacuTask().execute(chromosomeStr);
         btn.setEnabled(true);
     }
 
