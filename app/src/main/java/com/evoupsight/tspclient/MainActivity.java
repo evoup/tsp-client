@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity {
     Integer selectLocation;
     CheckBox box1, box2, box3, box4, box5, box6, box7, box8, box9, box10;
     Button btn;
+    String showText;
+    MainActivity a;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,9 +69,36 @@ public class MainActivity extends AppCompatActivity {
         }
         btn.setEnabled(false);
         // 起一个异步任务来做计算
-        new CacuTask().execute(chromosomeStr);
+        Object[] objs = new Object[2];
+        objs[0] = this;
+        objs[1] = chromosomeStr;
+        new CacuTask().execute(objs);
         btn.setEnabled(true);
     }
 
+    public void setA(MainActivity a) {
+        this.a = a;
+    }
 
+    public void runThread(String text) {
+        this.showText = text;
+        setA(this);
+        new Thread() {
+            public void run() {
+                try {
+                    runOnUiThread(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            Toast.makeText(a, showText, Toast.LENGTH_LONG).show();
+                        }
+                    });
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }.start();
+    }
 }
