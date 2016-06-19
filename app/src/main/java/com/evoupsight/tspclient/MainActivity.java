@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     String chromosomeStr;
     Integer selectLocation;
     CheckBox box1, box2, box3, box4, box5, box6, box7, box8, box9, box10;
+    Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         box8 = (CheckBox) findViewById(R.id.checkBox8);
         box9 = (CheckBox) findViewById(R.id.checkBox9);
         box10 = (CheckBox) findViewById(R.id.checkBox10);
-        Button btn = (Button) findViewById(R.id.button);
+        btn = (Button) findViewById(R.id.button);
         CheckBoxListener listener = new CheckBoxListener(this);
         box1.setOnCheckedChangeListener(listener);
         box2.setOnCheckedChangeListener(listener);
@@ -59,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
      * 行程规划排序
      */
     public void planScheduler() {
-
+        if (selectLocation != 6) {
+            Toast.makeText(this, "请选择6个要拜访的地点", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        btn.setEnabled(false);
+        new CacuTask(chromosomeStr).execute();
+        btn.setEnabled(true);
     }
 }

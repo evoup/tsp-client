@@ -1,0 +1,40 @@
+package com.evoupsight.tspclient;
+
+import android.os.AsyncTask;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+
+/**
+ * Created by evoup on 16-6-19.
+ */
+public class CacuTask extends AsyncTask<Void, Void, Void> {
+    private String mChromoStr;
+
+    public CacuTask(String str) {
+        this.mChromoStr = str;
+    }
+
+    @Override
+    protected Void doInBackground(Void... voids) {
+        try {
+            Socket so = new Socket("567393.eicp.net", 15866);
+            so.setSoTimeout(1000 * 60 * 5);
+            DataOutputStream dos = new DataOutputStream(so.getOutputStream());
+            DataInputStream dis = new DataInputStream(so.getInputStream());
+            dos.writeBytes(this.mChromoStr.toString() + "\n");
+            String resStr = dis.readLine();
+            if (resStr != null && !resStr.startsWith("ERR")) {
+                //Toast.makeText(this,"正在进行云计算排序",Toast.LENGTH_LONG).show();
+            } else {
+                //Toast.makeText(this,"服务端发生错误", Toast.LENGTH_LONG).show();
+            }
+        } catch (IOException e) {
+            //Toast.makeText(this,"网络错误",Toast.LENGTH_SHORT).show();
+        }
+        return null;
+    }
+
+}
