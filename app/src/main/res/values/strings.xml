@@ -12,4 +12,5 @@
     <string name="districtI">浙北大峡谷</string>
     <string name="districtJ">淮安府署</string>
     <string name="btn01">开始规划行程</string>
+    <string name="btn02">返回上一页继续查询</string>
 </resources>
