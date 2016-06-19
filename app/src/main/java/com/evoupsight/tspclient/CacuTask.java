@@ -29,8 +29,9 @@ public class CacuTask extends AsyncTask<Void, String, Void> {
 
     @Override
     protected Void doInBackground(Void... voids) {
+        Socket so = null;
         try {
-            Socket so = new Socket("567393.eicp.net", 15866);
+            so = new Socket("567393.eicp.net", 15866);
             so.setSoTimeout(1000 * 60 * 5);
             DataOutputStream dos = new DataOutputStream(so.getOutputStream());
             DataInputStream dis = new DataInputStream(so.getInputStream());
@@ -46,6 +47,12 @@ public class CacuTask extends AsyncTask<Void, String, Void> {
         } catch (IOException e) {
             //Toast.makeText(this,"网络错误",Toast.LENGTH_SHORT).show();
             publishProgress("网络错误");
+        } finally {
+            try {
+                if (so != null) so.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         return null;
